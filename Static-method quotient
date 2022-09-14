@@ -1,0 +1,59 @@
+/* Create a program that divides one number by another number. These number should allow decimal values. This program will be
+ * modular and use the following methods: 
+ * 
+ * getNumberator
+ * This method will ask the user for the numerator. The numerator should be returned back to the main method. 
+ * 
+ * getDenominator
+ * This will ask the user for the denominator. If the denominator is equal to  0, the program should print an error message
+ * and ask the user to enter the denominator again. The method should continue to ask the user for the denominator as long as the
+ * denominator is equal to 0. Once the user enters a number other than 0, the denominator should be returned to the main method.
+ * 
+ * calculateQuotient
+ * This method will calculate the quotient by dividing the numerator by the denominator. The quotient should be returned to the main 
+ * method.
+ * 
+ * print
+ * This method will print the numerator, the denominator, and the quotient. 
+ */
+
+
+import java.util.Scanner;
+public class DivisionProgram {
+	public static void main(String[] args) {
+		double num1 = getNumerator();
+		double num2 = getDenominator();
+		double sum = calculateQuotient(num1, num2);
+		print(sum);
+
+	}
+	public static double getNumerator() {
+		
+		System.out.println ("Enter a numerator");
+		Scanner keyboard = new Scanner(System.in);
+		double num = keyboard.nextDouble();
+		return num;
+	}
+	public static double getDenominator( ) {
+		System.out.println ("Enter a denomerator");
+		Scanner keyboard = new Scanner(System.in);
+		double denom = keyboard.nextDouble();
+		return denom;
+	}
+	public static double calculateQuotient (double num, double denom) {
+		double quotient = 0;
+		
+		while (denom == 0) { 
+			System.out.println ("Enter another denominator");
+			Scanner keyboard = new Scanner(System.in);
+			denom = keyboard.nextDouble();
+			}
+		if (denom != 0) {
+			quotient = num / denom;
+		}
+		return quotient;
+	}
+	public static void print(double total) {
+		System.out.println ("The quotient of two numbers is: " + total);
+	}
+}
