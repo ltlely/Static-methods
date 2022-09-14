@@ -1,0 +1,26 @@
+package AdditionProgram;
+import java.util.Scanner;
+public class AdditionProgram {
+	public static void main(String[]args) {
+		int num1 = getNumber();
+		int num2 = getNumber();
+		int sum = add(num1 , num2);
+		print(sum);
+	
+	
+	
+	}
+	public static int getNumber() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println ("Enter the number:");
+		int number = keyboard.nextInt();
+		return number;
+	}
+	public static int add(int num1,int num2) {
+		int sum = num1 + num2;
+		return sum;
+	}
+	public static void print(int total) {
+		System.out.println ("The sum is: " + total);
+	}
+}
